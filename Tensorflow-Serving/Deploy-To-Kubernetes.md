@@ -22,3 +22,7 @@
 * 取到External-IP
 * 客户端： python tensorflow_serving/example/inception_client.py --server=35.236.157.121:9000 --image=./Xiang_Xiang_panda.jpg
 
+
+##IF Wanna See The log
+* kubectl logs podID
+
