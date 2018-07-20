@@ -5,6 +5,12 @@
 * sudo apt-get update
   apt-get install python-pip
   pip install shadowsocks
+  
+* 如果出现Command "python setup.py egg_info" failed with error  
+	解决方案
+	sudo python -m pip install --upgrade --force pip
+	sudo pip install setuptools==33.1.1 
+
 * create /etc/shadowsocks.json
   vi /etc/shadowsocks.json
   add: (单端口)
@@ -31,6 +37,11 @@
   
 * ssserver -c /etc/shadowsocks.json -d start
 * ssserver -c /etc/shadowsocks.json -d stop 
+* ubuntu 开机启动
+	sudo vi /etc/rc.local
+	在 exit 0 这一行的上边加入： /usr/local/bin/ssserver –c /etc/shadowsocks.json
+
+
 
 
 * Client Setup
