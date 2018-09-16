@@ -35,11 +35,12 @@
     "method": "aes-256-cfb"
   }
   
-* ssserver -c /etc/shadowsocks.json -d start
-* ssserver -c /etc/shadowsocks.json -d stop 
+* ssserver -c /etc/shadowsocks.json -d start   #也可能没有 -d
+* ssserver -c /etc/shadowsocks.json -d stop    #也可能没有 -d
 * ubuntu 开机启动
 	sudo vi /etc/rc.local
-	在 exit 0 这一行的上边加入： /usr/local/bin/ssserver –c /etc/shadowsocks.json
+	在 exit 0 这一行的上边加入： /usr/local/bin/ssserver –c /etc/shadowsocks.json start
+	/usr/local/bin/ssserver也有可能在/usr/bin/sserver 可用find -name ssserver查找一下安装在哪里顾
 
 
 
