@@ -1,0 +1,37 @@
+ 120.79.201.243
+
+阿里云帐户:羽迹科技     Yjkj123
+远程连接密码：    641903
+
+开机自动启动java设置:
+
+1) 将你的启动脚本复制到 /etc/init.d目录下
+     sudo cp test.sh /etc/init.d/
+
+2)执行如下命令将脚本放到启动脚本中去：
+	 cd /etc/init.d
+	 sudo chmod 755 /etc/init.d/test.sh
+	 sudo update-rc.d test.sh defaults 95
+	 
+	 
+注：其中数字95是脚本启动的顺序号，按照自己的需要相应修改即可。在你有多个启动脚本，而它们之间又有先后启动的依赖关系时你就知道这个数字的具体作用了。该命令的输出信息参考如下：
+        update-rc.d: warning: /etc/init.d/test missing LSB information
+
+        update-rc.d: see
+
+
+			 
+3)卸载启动脚本的方法：
+            cd /etc/init.d
+            sudo update-rc.d -f test.shremove
+			
+		
+/etc/init.d/ 下新建startJava.sh:
+nohup java -jar /root/base-0.0.1-SNAPSHOT.jar > log_base.txt &    #注意/root/base-0.0.1-SNAPSHOT.jar要写绝对路径
+
+
+然后在/etc/init.d/输入
+sudo chmod 755 /etc/init.d/startJava.sh
+sudo update-rc.d startJava.sh defaults 95
+
+
