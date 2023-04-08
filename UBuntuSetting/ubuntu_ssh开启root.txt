@@ -1,0 +1,33 @@
+测试环境为腾讯云ubuntu16.04基本环境
+
+1.默认使用ubuntu用户登录，密码为服务器配置时设置的密码，可在重置密码中修改
+
+2.修改 root 密码
+
+sudo passwd root
+3.修改配置文件
+
+sudo vi /etc/ssh/sshd_config
+找到下面相关配置：
+
+# Authentication:
+LoginGraceTime 120
+PermitRootLogin prohibit-password
+StrictModes yes
+更改为：
+
+# Authentication:
+LoginGraceTime 120
+#PermitRootLogin prohibit-password
+PermitRootLogin yes
+StrictModes yes
+4.重启ssh
+
+sudo service ssh restart
+ 
+
+ 
+
+ 
+
+接下来就可以putty使用root登录了

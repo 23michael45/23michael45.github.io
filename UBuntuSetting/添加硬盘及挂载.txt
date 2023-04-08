@@ -1,0 +1,14 @@
+#查看硬盘的详细信息
+fdisk -l 
+#找到Disk identifier: 并改成小写
+1fc351fe-7ee7-40e4-9044-873ceb58ea91
+e80152a0-0a2b-4e15-a3c8-fad410aef1d5
+
+#设置开机自动挂载
+sudo vim /etc/fstab
+#加入一行
+UUID=1fc351fe-7ee7-40e4-9044-873ceb58ea91 /mnt/sdb ext4 defaults 0 2
+UUID=e80152a0-0a2b-4e15-a3c8-fad410aef1d5 /mnt/sdc ext4 defaults 0 2
+
+#分区初始化
+fdisk /dev/sdb
