@@ -1,0 +1,6 @@
+Here is my easier solution which works with Anaconda, Miniconda, and even Miniforge:
+
+1. Open PowerShell and browse to condabin folder in your Conda installation directory, for example: C:\Users\<username>\anaconda3\condabin
+2. Run ./conda init powershell in that folder, and reopen the PowerShell.
+3. Please note: If you encountered ps1 cannot be loaded because running scripts is disabled on this system, simply run the PowerShell as Administrator and enter the following: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+4. Restart the PowerShell and enjoy!
